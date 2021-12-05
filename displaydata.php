@@ -22,11 +22,11 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-	<ul>
-		<li><a href="index.php">Home</a></li>
-		<li><a href="">E-Library</a></li>
-		<li><a href="https://www.alapan.me/" target="_blank">Visit My Blog!</a></li>
-	</ul>
+	<div class="topnav">
+		<a href="./index.php">Home</a>
+		<a class="active" href="displaydata.php">E-Library</a>
+	</div>
+	<input type="text" placeholder="Search..">
 	<div style="overflow-x:auto;">
 		<h1>Books Available for Free Download</h1>
 		<table width="100%" cellspacing="0" cellpadding="18">
