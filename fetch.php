@@ -23,6 +23,7 @@ if (mysqli_num_rows($result) > 0) {
     $output .= '
     <table width="100%" cellspacing="0" cellpadding="18">
     <div class="header">
+        <th>Book ID</th>
         <th>Book Name</th>
         <th>Book Description</th>
         <th>Book Author</th>
@@ -30,11 +31,13 @@ if (mysqli_num_rows($result) > 0) {
         <th>Download Link</th>
         <th>Uploader Name</th>
         <th>Uploader Email</th>
+        <th>Delete Book</th>
     </div>
 ';
     while ($row = mysqli_fetch_array($result)) {
         $output .= '
 <tr>
+    <td>' . $row['bookid'] . '</td>
     <td>' . $row['bookname'] . '</td>
     <td>' . $row['bookdesc'] . '</td>
     <td>' . $row['bookdesc'] . '</td>
@@ -42,10 +45,11 @@ if (mysqli_num_rows($result) > 0) {
     <td><a href="http://localhost/phpsandbox/E-Library-master/files/' . $row['bookfile'] . '"><b>Download E-Book</b></a></td>
     <td>' . $row['uploadername'] . '</td>
     <td>' . $row['uploaderemail'] . '</td>
+    <td><div class="danger"><a href="displaydata.php?del='.$row['bookid'].'" >Delete</a></div></td>
 </tr>';
     }
     echo $output;
 } else {
-    $msg='<h2>Data  NOT  Found</h2>';
+    $msg = '<h3>Data  NOT  Found</h3>';
     echo $msg;
 }

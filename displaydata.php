@@ -14,6 +14,16 @@ if ($conn->connect_error) {
 //fetch from database
 $sql = "SELECT * from book";
 $result = $conn->query($sql);
+if (isset($_GET['del'])) {
+	$del_id=$_GET['del'];
+	$delete = "DELETE FROM book WHERE bookid='$del_id'";
+	if(mysqli_query($conn,$delete)===true){
+		$msg = "Record has been sucessfully deleted!";
+	}
+	else{
+		$msg .= "Failed, Please try again!";
+	}
+}
 ?>
 <html>
 </head>
@@ -32,6 +42,7 @@ $result = $conn->query($sql);
 	</div>
 	<div style="overflow-x:auto;">
 		<h1>Books Available for Free Download</h1>
+		<h3><?php echo $msg;?></h3>
 		<div id="result"></div>
 	</div>
 </body>
