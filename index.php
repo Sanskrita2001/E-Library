@@ -39,7 +39,8 @@ if (isset($_POST['submit'])) {
                 # code...
                 $flag = 'alert alert-dismissible alert-success';
                 $message = 'Welcome! Sucessful Login';
-                include("input.php");
+                header("location:http://localhost/phpsandbox/E-Library-master/input.php");
+                // include("input.php");
             } else {
                 $flag = 'alert alert-dismissible alert-danger';
                 $message = 'Incorrect Password';

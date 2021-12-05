@@ -19,14 +19,15 @@ $result = $conn->query($sql);
 </head>
 <title>E-Library Display Section</title>
 <link rel="stylesheet" type="text/css" href="css/display.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
 	<div class="topnav">
 		<a href="./index.php">Home</a>
 		<a class="active" href="displaydata.php">E-Library</a>
+		<input type="text" name="search_text" id="search_text" placeholder="Search by book name">
 	</div>
-	<input type="text" placeholder="Search..">
 	<div style="overflow-x:auto;">
 		<h1>Books Available for Free Download</h1>
 		<table width="100%" cellspacing="0" cellpadding="18">
@@ -56,5 +57,17 @@ $result = $conn->query($sql);
 		</table>
 	</div>
 </body>
+<script>
+	$(document).ready(function () {
+    $('#search_text').keyup(function (params) {
+        var txt = $(this).val();
+		if(txt!=''){
 
+		}
+		else{
+			
+		}
+    })
+})
+</script>
 </html>

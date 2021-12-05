@@ -5,11 +5,6 @@
 </head>
 
 <body>
-	<!-- <ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="displaydata.php">E-Library</a></li>
-			<li><a href="http://alapan.me" target="_blank">Visit My Blog!</a></li>
-		</ul> -->
 	<div class="topnav">
 		<a class="active" href="./index.php">Home</a>
 		<a href="displaydata.php">E-Library</a>
