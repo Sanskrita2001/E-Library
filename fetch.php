@@ -32,6 +32,7 @@ if (mysqli_num_rows($result) > 0) {
         <th>Uploader Name</th>
         <th>Uploader Email</th>
         <th>Delete Book</th>
+        <th>Update</th>
     </div>
 ';
     while ($row = mysqli_fetch_array($result)) {
@@ -40,12 +41,13 @@ if (mysqli_num_rows($result) > 0) {
     <td>' . $row['bookid'] . '</td>
     <td>' . $row['bookname'] . '</td>
     <td>' . $row['bookdesc'] . '</td>
-    <td>' . $row['bookdesc'] . '</td>
-    <td>' . $row['bookname'] . '</td>
+    <td>' . $row['bookauthor'] . '</td>
+    <td>' . $row['booklang'] . '</td>
     <td><a href="http://localhost/phpsandbox/E-Library-master/files/' . $row['bookfile'] . '"><b>Download E-Book</b></a></td>
     <td>' . $row['uploadername'] . '</td>
     <td>' . $row['uploaderemail'] . '</td>
     <td><div class="danger"><a href="displaydata.php?del='.$row['bookid'].'" >Delete</a></div></td>
+    <td><div class="warning"><a href="update.php?edit='.$row['bookid'].'" >Edit</a></div></td>
 </tr>';
     }
     echo $output;

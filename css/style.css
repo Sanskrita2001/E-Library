@@ -129,7 +129,14 @@ li a:hover {
 	text-align: center;
 	border-radius: 20px;
 }
-.danger a{
+.danger a,.warning a{
 	text-decoration: none;
 	color: #fff;
+}
+.warning{
+	background-color: rgb(230, 230, 71);
+	color: #f2f2f2;
+	padding: 7%;
+	text-align: center;
+	border-radius: 20px;
 }

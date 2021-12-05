@@ -14,11 +14,12 @@ if ($conn->connect_error) {
 //fetch from database
 $sql = "SELECT * from book";
 $result = $conn->query($sql);
+$msg;
 if (isset($_GET['del'])) {
 	$del_id=$_GET['del'];
 	$delete = "DELETE FROM book WHERE bookid='$del_id'";
 	if(mysqli_query($conn,$delete)===true){
-		$msg = "Record has been sucessfully deleted!";
+		$msg .= "Record has been sucessfully deleted!";
 	}
 	else{
 		$msg .= "Failed, Please try again!";
