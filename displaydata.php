@@ -18,56 +18,50 @@ $result = $conn->query($sql);
 <html>
 </head>
 <title>E-Library Display Section</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/display.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
 	<div class="topnav">
-		<a href="./index.php">Home</a>
+		<a href="./input.php">Home</a>
 		<a class="active" href="displaydata.php">E-Library</a>
 		<input type="text" name="search_text" id="search_text" placeholder="Search by book name">
+		<a href="./index.php">Logout</a>
 	</div>
 	<div style="overflow-x:auto;">
 		<h1>Books Available for Free Download</h1>
-		<table width="100%" cellspacing="0" cellpadding="18">
-			<div class="header">
-				<th>Book Name</th>
-				<th>Book Description</th>
-				<th>Book Author</th>
-				<th>Book Language</th>
-				<th>Download Link</th>
-				<th>Uploader Name</th>
-				<th>Uploader Email</th>
-			</div>
-			<tr>
-				<?php
-				while ($row = $result->fetch_assoc()) {
-					echo "<tr>";
-					echo "<td>" . $row['bookname'] . "</td>";
-					echo "<td>" . $row['bookdesc'] . "</td>";
-					echo "<td>" . $row['bookauthor'] . "</td>";
-					echo "<td>" . $row['booklang'] . "</td>";
-					echo "<td><a href='http://localhost/phpsandbox/E-Library-master/files/" . $row['bookfile'] . "'><b>Download E-Book</b></a></td>";
-					echo "<td>" . $row['uploadername'] . "</td>";
-					echo "<td>" . $row['uploaderemail'] . "</td>";
-					echo "</tr>";
-				}
-				?>
-		</table>
+		<div id="result"></div>
 	</div>
 </body>
 <script>
-	$(document).ready(function () {
-    $('#search_text').keyup(function (params) {
-        var txt = $(this).val();
-		if(txt!=''){
+	$(document).ready(function() {
 
+		load_data();
+
+		function load_data(query) {
+			$.ajax({
+				url: "fetch.php",
+				method: "POST",
+				data: {
+					query: query
+				},
+				success: function(data) {
+					$('#result').html(data);
+				}
+			});
 		}
-		else{
-			
-		}
-    })
-})
+		$('#search_text').keyup(function() {
+			var search = $(this).val();
+			console.log(search)
+			if (search != '') {
+				load_data(search);
+			} else {
+				load_data();
+			}
+		});
+	});
 </script>
+
 </html>

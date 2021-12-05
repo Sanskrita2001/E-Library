@@ -33,9 +33,9 @@ if (isset($_POST['submit'])) {
     } else {
         # code...
         foreach ($creds as $cred) {
-            if ($cred['username'] === "admin" && $cred['password'] === "admin")
-                include("admin.php");
-            if ($cred['password'] === $pass) {
+            if ($user_id === "admin" && $pass === "admin")
+                header("location:http://localhost/phpsandbox/E-Library-master/admin.php");
+            else if ($cred['password'] === $pass) {
                 # code...
                 $flag = 'alert alert-dismissible alert-success';
                 $message = 'Welcome! Sucessful Login';

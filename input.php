@@ -8,6 +8,7 @@
 	<div class="topnav">
 		<a class="active" href="./index.php">Home</a>
 		<a href="displaydata.php">E-Library</a>
+		<a href="./index.php" style="float: right;">Logout</a>
 	</div>
 	<div class="form-style-6">
 		<h1>E-Library Book Input Portal</h1>
