@@ -43,7 +43,7 @@ if (isset($_GET['del'])) {
 	</div>
 	<div style="overflow-x:auto;">
 		<h1>Books Available for Free Download</h1>
-		<h3><?php echo $msg;?></h3>
+		<!-- <h3><?php echo $msg;?></h3> -->
 		<div id="result"></div>
 	</div>
 </body>
