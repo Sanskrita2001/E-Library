@@ -1,5 +1,5 @@
 # E-Library
-A simple E-Library made from HTML, CSS and PHP. One can host this on their local server and share E-books, Question papers, Documents etc. with others.
+A simple E-Library made from HTML, CSS, JS, and PHP. One can host this on their local server and share E-books, Question papers, Documents etc. with others.
 
 # Features!
 
@@ -15,6 +15,8 @@ A simple E-Library made from HTML, CSS and PHP. One can host this on their local
 - PHP
 - MY SQL
 - Apache
+- JQuery
+- AJAX
 
 ### Installation
 
@@ -29,9 +31,8 @@ A simple E-Library made from HTML, CSS and PHP. One can host this on their local
 
 ### Screenshots
 
-![e-library home](https://user-images.githubusercontent.com/25705483/28074997-bb28b3ba-6677-11e7-86f3-4a261512dd34.JPG)
+![image](https://user-images.githubusercontent.com/60420648/144765687-bed04df0-6e2c-47c8-9c1c-9359f6681364.png)
 
-![e-library main](https://user-images.githubusercontent.com/25705483/28075088-07673986-6678-11e7-8c31-55aa2a3a2584.JPG)
 
 ### License
 
